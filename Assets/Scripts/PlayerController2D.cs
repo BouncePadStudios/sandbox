@@ -9,14 +9,20 @@ public class PlayerController2D : MonoBehaviour
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField]
-    GameObject attackHitBox1;
+    /*[SerializeField]
+    GameObject[] attackHitBox1;
 
     [SerializeField]
     GameObject attackHitBox2;
 
     [SerializeField]
-    GameObject attackHitBox4;
+    GameObject attackHitBox3;
+
+    [SerializeField]
+    GameObject attackHitBox4;*/
+
+    [SerializeField]
+    GameObject[] attackHitBox = new GameObject[4];
 
     [SerializeField]
     private Transform groundCheck;
@@ -34,9 +40,13 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField]
     private float jumpSpeed = 4f;
 
+    private float hitboxDuration = .5f;
+
     private float dashSpeed = 3f;
 
     private bool isAttacking = false;
+
+    private bool isAirAttacking = false;
 
     private bool isGrounded;
 
@@ -50,7 +60,6 @@ public class PlayerController2D : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
     }
 
     private void Update()
@@ -58,6 +67,7 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && !isAttacking)
         {
             isAttacking = true;
+            int i;
 
             // Select the attack animation 
             if (isGrounded)
@@ -67,30 +77,36 @@ public class PlayerController2D : MonoBehaviour
                 {
                     // Crouch attack
                     animator.Play("Player_attack3");
+                    i = 3;
                 }
                 else
                 {
                     // Melee attack
-                    int i = UnityEngine.Random.Range(1, 3);
+                    i = UnityEngine.Random.Range(1, 3);
                     animator.Play("Player_attack" + i);
                 }
-
-                
-
 
             }
             else
             {
                 // Aerial attack 
                 animator.Play("Player_attack4");
+                isAirAttacking = true;
+                i = 4;
             }
 
-            Invoke("ResetAttack", .5f);
+            i -= 1; // arrays start at 0 so convert to accomodate for that 
+            StartCoroutine(DoAttack(i));
         }
     }
 
-    void ResetAttack()
+
+
+    IEnumerator DoAttack(int i)
     {
+        attackHitBox[i].SetActive(true);
+        yield return new WaitForSeconds(hitboxDuration);
+        attackHitBox[i].SetActive(false);
         isAttacking = false;
     }
 
@@ -102,6 +118,13 @@ public class PlayerController2D : MonoBehaviour
             (Physics2D.Linecast(transform.position, groundCheckR.position, 1 << LayerMask.NameToLayer("Ground"))))
         {
             isGrounded = true;
+            
+            // Cancel air attack animation 
+            if (isAirAttacking)
+            {
+                isAirAttacking = false;
+                isAttacking = false;
+            }
         }
         else
         {
