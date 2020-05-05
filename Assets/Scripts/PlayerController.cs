@@ -9,18 +9,6 @@ public class PlayerController2D : MonoBehaviour
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
 
-    /*[SerializeField]
-    GameObject[] attackHitBox1;
-
-    [SerializeField]
-    GameObject attackHitBox2;
-
-    [SerializeField]
-    GameObject attackHitBox3;
-
-    [SerializeField]
-    GameObject attackHitBox4;*/
-
     [SerializeField]
     GameObject[] attackHitBox = new GameObject[4];
 
