@@ -9,7 +9,7 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "e9c0462f-c37f-4abc-a5d0-995e3fec5a4f",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": ""
                 },
