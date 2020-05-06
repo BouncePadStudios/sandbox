@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerSpawner : MonoBehaviour
 {
 
     [SerializeField] private PlayerController CharacterWaterPrefab;
 
-
-    PlayerChoice playerOneChoice = PlayerChoice.Water;
-    PlayerChoice playerTwoChoice = PlayerChoice.Water;
-
-    public enum PlayerChoice { Water,Fire,Earth,Air };
+    public PlayerInfo playerInfo;
 
     //CharacterWater characterWater;
     /*CharacterFire characterFire;
@@ -17,13 +14,44 @@ public class PlayerSpawner : MonoBehaviour
     CharacterIce characterAir;*/
 
 
+    public void OnPlayerJoined()
+    {
+        Debug.Log("PlayerJoined");
+        /*
+        if (playerInfo.numPlayers == 2)
+            Time.timeScale = 1f;//resume game if controller disconnected and rejoined
+
+        if (!playerInfo.playerOneJoined)
+        {
+            playerInfo.playerOneJoined = true;
+            CreatePrefab(CharacterWaterPrefab, transform);
+        }
+
+        else
+        {
+            playerInfo.playerTwoJoined = true;
+            CreatePrefab(CharacterWaterPrefab, transform);
+        }
+            
+
+        ++playerInfo.numPlayers;
+        */
+    }
+
+    public void OnPlayerLeft()
+    {
+        Debug.Log("PlayerLeft");
+        /*
+        --playerInfo.numPlayers;
+        Time.timeScale = 0f;//pause game if controller disconnected
+        */
+    }
+
     public void SpawnPlayers()
     {
-        
 
-
-        CreatePrefab(CharacterWaterPrefab,transform);
-        
+        //CreatePrefab(CharacterWaterPrefab, transform);
+        //CreatePrefab(CharacterWaterPrefab, transform);
 
         /*
         switch (playerOneChoice)
