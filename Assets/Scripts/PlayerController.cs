@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-
     private Animator animator;
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isCrouched = false;
 
+    private Vector2 movementInput;
+    private bool attack;
 
     // Start is called before the first frame update
     void Start()
@@ -49,9 +51,15 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    private void OnMove(InputValue value)
     {
-        if (Input.GetButtonDown("Fire1") && !isAttacking)
+        movementInput = value.Get<Vector2>();
+        
+    }
+
+    private void OnMelee()
+    {
+        if (!isAttacking)
         {
             isAttacking = true;
             int i;
@@ -87,7 +95,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    private void OnJump()
+    {
+        if (isGrounded)
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
+            animator.Play("Player_jump");
+        }
+    }
 
     IEnumerator DoAttack(int i)
     {
@@ -121,7 +136,7 @@ public class PlayerController : MonoBehaviour
                 animator.Play("Player_jump");
         }
 
-        if (Input.GetKey("d") || Input.GetKey("right")) // move right 
+        if (movementInput.x > 0.7f) // move right 
         {
             rb2d.velocity = new Vector2(runSpeed, rb2d.velocity.y);
 
@@ -131,7 +146,7 @@ public class PlayerController : MonoBehaviour
             // Change character position 
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (Input.GetKey("a") || Input.GetKey("left")) // move left 
+        else if (movementInput.x < -0.7f) // move left 
         {
             rb2d.velocity = new Vector2(-runSpeed, rb2d.velocity.y);
 
@@ -149,11 +164,6 @@ public class PlayerController : MonoBehaviour
                 animator.Play("Player_idle");
         }
 
-        if (Input.GetKey("space") && isGrounded) // jump
-        {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
-            animator.Play("Player_jump");
-        }
     }
 
     private bool isFree()
@@ -165,5 +175,4 @@ public class PlayerController : MonoBehaviour
 
         return false;
     }
-
 }

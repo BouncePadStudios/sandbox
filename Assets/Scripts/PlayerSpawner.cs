@@ -1,26 +1,31 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "PlayerSpawner")]
-public class PlayerSpawner : ScriptableObject
+public class PlayerSpawner : MonoBehaviour
 {
-    PlayerOneInput inputOne;
-    PlayerTwoInput inputTwo;
+
+    [SerializeField] private PlayerController CharacterWaterPrefab;
+
 
     PlayerChoice playerOneChoice = PlayerChoice.Water;
     PlayerChoice playerTwoChoice = PlayerChoice.Water;
 
     public enum PlayerChoice { Water,Fire,Earth,Air };
 
-    CharacterWater characterWater;
+    //CharacterWater characterWater;
     /*CharacterFire characterFire;
     CharacterEarth characterEarth;
     CharacterIce characterAir;*/
 
-    void Awake()
-    {
-        inputOne = (PlayerOneInput)ScriptableObject.CreateInstance(typeof(PlayerOneInput));
-        inputTwo = (PlayerTwoInput)ScriptableObject.CreateInstance(typeof(PlayerTwoInput));
 
+    public void SpawnPlayers()
+    {
+        
+
+
+        CreatePrefab(CharacterWaterPrefab,transform);
+        
+
+        /*
         switch (playerOneChoice)
         {
             case PlayerChoice.Water:
@@ -61,10 +66,13 @@ public class PlayerSpawner : ScriptableObject
                 break;
         }
             
-        
+        */
 
     }
 
-    
+    private void CreatePrefab(PlayerController prefab, Transform pos)
+    {
+        PlayerController PlayerOne = Instantiate(prefab, pos);
+    }
 
 }
