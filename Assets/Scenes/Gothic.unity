@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53832ba9a67b99428ec0847dffc1bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterWaterPrefab: {fileID: 7545545520954816321, guid: 7a7ef56891bcbdc42bfe67763ef585cf,
+  CharacterWaterPrefab: {fileID: 7545545520954816333, guid: 7a7ef56891bcbdc42bfe67763ef585cf,
     type: 3}
   playerInfo: {fileID: 11400000, guid: 005c7f1ff6a2687419c02b450b0100e7, type: 2}
 --- !u!4 &386838904
@@ -815,10 +815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_MaxPlayerCount: 2
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 2
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
