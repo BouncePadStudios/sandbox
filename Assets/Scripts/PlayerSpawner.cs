@@ -8,10 +8,13 @@ public class PlayerSpawner : MonoBehaviour
 {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     [SerializeField] private GameObject CharacterWaterPrefab;
     [SerializeField] private GameObject CharacterFirePrefab;
     List<InputDevice> inputDevices;
 =======
+=======
+>>>>>>> parent of 24a7475... Trying to figure out Input
     [SerializeField] private PlayerController CharacterWaterPrefab;
 
 >>>>>>> parent of 24a7475... Trying to figure out Input
@@ -64,11 +67,14 @@ public class PlayerSpawner : MonoBehaviour
     {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         //PlayerInput player1 = PlayerInput.Instantiate(CharacterWaterPrefab);
         //PlayerInput player2 = PlayerInput.Instantiate(CharacterFirePrefab);
 
         //PlayerInput player2 = PlayerInput.Instantiate(CharacterWaterPrefab, controlScheme: "Controller", pairWithDevice: Joystick.current);
 
+=======
+>>>>>>> parent of 24a7475... Trying to figure out Input
 =======
 >>>>>>> parent of 24a7475... Trying to figure out Input
         //CreatePrefab(CharacterWaterPrefab, transform);

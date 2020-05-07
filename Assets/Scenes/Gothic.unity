@@ -787,8 +787,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterWaterPrefab: {fileID: 7545545520954816321, guid: 7a7ef56891bcbdc42bfe67763ef585cf,
+<<<<<<< HEAD
     type: 3}
   CharacterFirePrefab: {fileID: 7545545520954816333, guid: 8e9d30da9ca2bde4ea02a35dd6be4b65,
+=======
+>>>>>>> parent of 24a7475... Trying to figure out Input
     type: 3}
   playerInfo: {fileID: 11400000, guid: 005c7f1ff6a2687419c02b450b0100e7, type: 2}
 --- !u!4 &386838904
