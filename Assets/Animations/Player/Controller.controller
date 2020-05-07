@@ -73,7 +73,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ea75c92f8c531844e9e300108da87767, type: 2}
+  m_Motion: {fileID: 7400000, guid: 482494ea6ccaee240bbcad5e3c95cec0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -156,7 +156,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: idle1
+  m_Name: Controller
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -192,7 +192,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ee1f3ba6921490440badc6aa22af9c6a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 592d43503fb04db41a9624fefb3327ff, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
