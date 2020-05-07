@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
-using System.Collections.Generic;
 
 
 public class PlayerSpawner : MonoBehaviour
@@ -9,78 +7,27 @@ public class PlayerSpawner : MonoBehaviour
 
     public PlayerInputManager InputManager;
 
-    [SerializeField] private GameObject CharacterWaterPrefab;
-    [SerializeField] private GameObject CharacterFirePrefab;
-    List<InputDevice> inputDevices;
-
     public PlayerInfo playerInfo;
 
-    //CharacterWater characterWater;
-    /*CharacterFire characterFire;
-    CharacterEarth characterEarth;
-    CharacterIce characterAir;*/
+    [SerializeField] private GameObject CharacterWaterPrefab;
+    [SerializeField] private GameObject CharacterFirePrefab;
+  
 
     private void Awake()
     {
-        inputDevices = new List<InputDevice>();
-    }
 
-    public void OnPlayerJoined()
-    {
-        Debug.Log("PlayerJoined");
-        InputManager.playerPrefab = CharacterFirePrefab;
-        /*
-        if (playerInfo.numPlayers == 2)
-            Time.timeScale = 1f;//resume game if controller disconnected and rejoined
-
-        if (!playerInfo.playerOneJoined)
-        {
-            playerInfo.playerOneJoined = true;
-            CreatePrefab(CharacterWaterPrefab, transform);
-        }
-
-        else
-        {
-            playerInfo.playerTwoJoined = true;
-            CreatePrefab(CharacterWaterPrefab, transform);
-        }
-            
-
-        ++playerInfo.numPlayers;
-        */
-    }
-
-    public void OnPlayerLeft()
-    {
-        Debug.Log("PlayerLeft");
-        /*
-        --playerInfo.numPlayers;
-        Time.timeScale = 0f;//pause game if controller disconnected
-        */
-    }
-
-    public void SpawnPlayers()
-    {
-
-        //PlayerInput player1 = PlayerInput.Instantiate(CharacterWaterPrefab);
-        //PlayerInput player2 = PlayerInput.Instantiate(CharacterFirePrefab);
-
-        //PlayerInput player2 = PlayerInput.Instantiate(CharacterWaterPrefab, controlScheme: "Controller", pairWithDevice: Joystick.current);
-
-        //CreatePrefab(CharacterWaterPrefab, transform);
-        //CreatePrefab(CharacterWaterPrefab, transform);
-
-        /*
-        switch (playerOneChoice)
+        //setup the initial prefab for player one based on the choice made in the character selection screen (set in the playerInfo scriptable obj)
+        switch (playerInfo.playerOneChoice)
         {
             case PlayerChoice.Water:
-                PlayerController PlayerOne = Instantiate(characterWater);
-                PlayerOne.Initialize(inputOne);
+                Debug.Log("Switching to Water");
+                InputManager.playerPrefab = CharacterWaterPrefab;
                 break;
             case PlayerChoice.Fire:
-                PlayerController PlayerOne = Instantiate(characterFire);
-                PlayerOne.Initialize(inputOne);
+                Debug.Log("Switching to Fire");
+                InputManager.playerPrefab = CharacterFirePrefab;
                 break;
+                /*
             case PlayerChoice.Earth:
                 PlayerController PlayerOne = Instantiate(characterEarth);
                 PlayerOne.Initialize(inputOne);
@@ -89,30 +36,42 @@ public class PlayerSpawner : MonoBehaviour
                 PlayerController PlayerOne = Instantiate(characterAir);
                 PlayerOne.Initialize(inputOne);
                 break;
+                */
         }
+    }
 
-        switch (playerTwoChoice)
+    public void OnPlayerJoined()
+    {
+        Debug.Log("PlayerJoined");
+
+        playerInfo.numPlayers = 2;
+        Debug.Log(playerInfo.playerTwoChoice);
+        //Now that the first player has joined, setup the next spawnable prefab to be player 2's selection
+        switch (playerInfo.playerTwoChoice)
         {
             case PlayerChoice.Water:
-                PlayerController PlayerTwo = Instantiate(characterWater);
-                PlayerOne.Initialize(inputTwo);
+                InputManager.playerPrefab = CharacterWaterPrefab;
                 break;
             case PlayerChoice.Fire:
-                PlayerController PlayerTwo = Instantiate(characterFire);
-                PlayerOne.Initialize(inputTwo);
+                InputManager.playerPrefab = CharacterFirePrefab;
                 break;
+                /*
             case PlayerChoice.Earth:
-                PlayerController PlayerTwo = Instantiate(characterEarth);
-                PlayerOne.Initialize(inputTwo);
+                PlayerController PlayerOne = Instantiate(characterEarth);
+                PlayerOne.Initialize(inputOne);
                 break;
             case PlayerChoice.Air:
-                PlayerController PlayerTwo = Instantiate(characterAir);
-                PlayerOne.Initialize(inputTwo);
+                PlayerController PlayerOne = Instantiate(characterAir);
+                PlayerOne.Initialize(inputOne);
                 break;
+                */
         }
-            
-        */
+    }
 
+    public void OnPlayerLeft()
+    {
+        Debug.Log("PlayerLeft");
+        --playerInfo.numPlayers;
     }
 
     private void CreatePrefab(PlayerController prefab, Transform pos)

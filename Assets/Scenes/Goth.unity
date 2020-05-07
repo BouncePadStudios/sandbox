@@ -787,11 +787,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputManager: {fileID: 386838905}
+  playerInfo: {fileID: 11400000, guid: 005c7f1ff6a2687419c02b450b0100e7, type: 2}
   CharacterWaterPrefab: {fileID: 7545545520954816333, guid: 7a7ef56891bcbdc42bfe67763ef585cf,
     type: 3}
-  CharacterFirePrefab: {fileID: 7545545520954816333, guid: 8e9d30da9ca2bde4ea02a35dd6be4b65,
+  CharacterFirePrefab: {fileID: 7545545520954816333, guid: bc940059d2685044c84ff559ff9a9de4,
     type: 3}
-  playerInfo: {fileID: 11400000, guid: 005c7f1ff6a2687419c02b450b0100e7, type: 2}
 --- !u!4 &386838904
 Transform:
   m_ObjectHideFlags: 0
@@ -861,8 +861,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 7545545520954816333, guid: 7a7ef56891bcbdc42bfe67763ef585cf,
-    type: 3}
+  m_PlayerPrefab: {fileID: 0}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 1
   m_FixedNumberOfSplitScreens: -1
@@ -1890,7 +1889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9934e16821dd94d8c1206dd7d38684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawner: {fileID: 386838903}
 --- !u!4 &1351698399
 Transform:
   m_ObjectHideFlags: 0

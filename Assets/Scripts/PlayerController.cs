@@ -4,12 +4,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private PlayerInfo playerInfo;
     private Animator animator;
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
 
     [SerializeField]
-    GameObject[] attackHitBox = new GameObject[4];
+    GameObject[] attackHitBoxes = new GameObject[4];
 
     [SerializeField]
     private Transform groundCheck;
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Transform groundCheckR;
 
-    // Values
+    // STORE THESE VALUES IN THE PLAYERINFO SCRIPTABLE OBJECT ATTACHED
     [SerializeField]
     private float runSpeed = 1.5f;
 
@@ -51,13 +52,13 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnMove(InputValue value)
+    public void OnMove(InputValue value)
     {
         movementInput = value.Get<Vector2>();
         
     }
 
-    private void OnMelee()
+    public void OnMelee()
     {
         if (!isAttacking)
         {
@@ -77,7 +78,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     // Melee attack
-                    i = UnityEngine.Random.Range(1, 3);
+                    i = Random.Range(1, 3);
                     animator.Play("Player_attack" + i);
                 }
 
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnJump()
+    public void OnJump()
     {
         if (isGrounded)
         {
@@ -106,9 +107,9 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator DoAttack(int i)
     {
-        attackHitBox[i].SetActive(true);
+        attackHitBoxes[i].SetActive(true);
         yield return new WaitForSeconds(hitboxDuration);
-        attackHitBox[i].SetActive(false);
+        attackHitBoxes[i].SetActive(false);
         isAttacking = false;
     }
 
@@ -174,5 +175,21 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void OnDeviceLost()
+    {
+        //pause game if controller disconnected
+        --playerInfo.numPlayers;
+        Debug.Log("Device lost");
+        //Time.timeScale = 0f;
+    }
+    public void OnDeviceRegained()
+    {
+        //pause game if controller disconnected
+        ++playerInfo.numPlayers;
+        if (playerInfo.numPlayers == 2)
+            //Time.timeScale = 1f;
+        Debug.Log("Device regained");
     }
 }
