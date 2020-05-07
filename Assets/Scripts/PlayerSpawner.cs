@@ -7,17 +7,12 @@ using System.Collections.Generic;
 public class PlayerSpawner : MonoBehaviour
 {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+    public PlayerInputManager InputManager;
+
     [SerializeField] private GameObject CharacterWaterPrefab;
     [SerializeField] private GameObject CharacterFirePrefab;
     List<InputDevice> inputDevices;
-=======
-=======
->>>>>>> parent of 24a7475... Trying to figure out Input
-    [SerializeField] private PlayerController CharacterWaterPrefab;
 
->>>>>>> parent of 24a7475... Trying to figure out Input
     public PlayerInfo playerInfo;
 
     //CharacterWater characterWater;
@@ -33,6 +28,7 @@ public class PlayerSpawner : MonoBehaviour
     public void OnPlayerJoined()
     {
         Debug.Log("PlayerJoined");
+        InputManager.playerPrefab = CharacterFirePrefab;
         /*
         if (playerInfo.numPlayers == 2)
             Time.timeScale = 1f;//resume game if controller disconnected and rejoined
@@ -66,17 +62,11 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnPlayers()
     {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         //PlayerInput player1 = PlayerInput.Instantiate(CharacterWaterPrefab);
         //PlayerInput player2 = PlayerInput.Instantiate(CharacterFirePrefab);
 
         //PlayerInput player2 = PlayerInput.Instantiate(CharacterWaterPrefab, controlScheme: "Controller", pairWithDevice: Joystick.current);
 
-=======
->>>>>>> parent of 24a7475... Trying to figure out Input
-=======
->>>>>>> parent of 24a7475... Trying to figure out Input
         //CreatePrefab(CharacterWaterPrefab, transform);
         //CreatePrefab(CharacterWaterPrefab, transform);
 
