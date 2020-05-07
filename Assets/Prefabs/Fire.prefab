@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: -2351041091800263539}
   - component: {fileID: -830695237746428496}
   m_Layer: 0
-  m_Name: Water
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

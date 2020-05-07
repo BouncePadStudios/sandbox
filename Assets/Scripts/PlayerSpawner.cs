@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class PlayerSpawner : MonoBehaviour
 {
 
     [SerializeField] private GameObject CharacterWaterPrefab;
     [SerializeField] private GameObject CharacterFirePrefab;
-
+    List<InputDevice> inputDevices;
     public PlayerInfo playerInfo;
 
     //CharacterWater characterWater;
@@ -14,6 +17,10 @@ public class PlayerSpawner : MonoBehaviour
     CharacterEarth characterEarth;
     CharacterIce characterAir;*/
 
+    private void Awake()
+    {
+        inputDevices = new List<InputDevice>();
+    }
 
     public void OnPlayerJoined()
     {
@@ -52,9 +59,9 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnPlayers()
     {
 
-        PlayerInput player1 = PlayerInput.Instantiate(CharacterWaterPrefab);
+        //PlayerInput player1 = PlayerInput.Instantiate(CharacterWaterPrefab);
         //PlayerInput player2 = PlayerInput.Instantiate(CharacterFirePrefab);
-       
+
         //PlayerInput player2 = PlayerInput.Instantiate(CharacterWaterPrefab, controlScheme: "Controller", pairWithDevice: Joystick.current);
 
         //CreatePrefab(CharacterWaterPrefab, transform);
