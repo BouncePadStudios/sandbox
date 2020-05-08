@@ -26,7 +26,7 @@ public class Dummy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "AttackHitBox1" || collision.gameObject.name == "AttackHitBox2" || collision.gameObject.name == "AttackHitBox4")
+        if (collision.gameObject.transform.parent.name == "DamageCollision")
         {
             // take damage 
             isShaking = true;
