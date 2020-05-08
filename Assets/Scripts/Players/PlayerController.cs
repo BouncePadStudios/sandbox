@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private PlayerInfo playerInfo;
+    public PlayerInfo playerInfo;
+
     private Animator animator;
     private Rigidbody2D rb2d;
     private SpriteRenderer spriteRenderer;
@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isCrouched = false;
 
-    private Vector2 movementInput;
+    private float horizontalAxis;
+    private float verticalAxis;
     private bool attack;
 
     // Start is called before the first frame update
@@ -52,13 +53,14 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void OnMove(InputValue value)
+    public void OnMove(float h, float v)
     {
-        movementInput = value.Get<Vector2>();
+        horizontalAxis = h;
+        verticalAxis = v;
         
     }
 
-    public void OnMelee()
+    public void OnAttack()
     {
         if (!isAttacking)
         {
@@ -137,7 +139,7 @@ public class PlayerController : MonoBehaviour
                 animator.Play("Player_jump");
         }
 
-        if (movementInput.x > 0.7f) // move right 
+        if (horizontalAxis > 0.1f) // move right 
         {
             rb2d.velocity = new Vector2(runSpeed, rb2d.velocity.y);
 
@@ -147,7 +149,7 @@ public class PlayerController : MonoBehaviour
             // Change character position 
             transform.localScale = new Vector3(1, 1, 1);
         }
-        else if (movementInput.x < -0.7f) // move left 
+        else if (horizontalAxis < -0.1f) // move left 
         {
             rb2d.velocity = new Vector2(-runSpeed, rb2d.velocity.y);
 
@@ -175,21 +177,5 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
-    }
-
-    public void OnDeviceLost()
-    {
-        //pause game if controller disconnected
-        --playerInfo.numPlayers;
-        Debug.Log("Device lost");
-        //Time.timeScale = 0f;
-    }
-    public void OnDeviceRegained()
-    {
-        //pause game if controller disconnected
-        ++playerInfo.numPlayers;
-        if (playerInfo.numPlayers == 2)
-            //Time.timeScale = 1f;
-        Debug.Log("Device regained");
     }
 }

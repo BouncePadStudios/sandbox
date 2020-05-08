@@ -244,11 +244,10 @@ GameObject:
   - component: {fileID: 7545545520954816334}
   - component: {fileID: 7545545520954816323}
   - component: {fileID: 7545545520954816322}
+  - component: {fileID: 2804257820266609330}
   - component: {fileID: 7545545520954816321}
-  - component: {fileID: -2351041091800263539}
-  - component: {fileID: -830695237746428496}
   m_Layer: 0
-  m_Name: Water
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,6 +390,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &2804257820266609330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545545520954816333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4c97ac2df4a1049b1930fdd83c4f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7545545520954816321}
 --- !u!114 &7545545520954816321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c8d6b77be008148a77b7a194874c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInfo: {fileID: 11400000, guid: 005c7f1ff6a2687419c02b450b0100e7, type: 2}
   attackHitBoxes:
   - {fileID: 7545545520604540642}
   - {fileID: 7545545520747656818}
@@ -413,94 +426,6 @@ MonoBehaviour:
   groundCheckR: {fileID: 7545545520426578296}
   runSpeed: 1.5
   jumpSpeed: 4
---- !u!114 &-2351041091800263539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7545545520954816333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 294632aba9f96df4eae67a0b2069db4f,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7545545520954816321}
-        m_MethodName: OnDeviceLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7545545520954816321}
-        m_MethodName: OnDeviceReconnect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7545545520954816321}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e9c0462f-c37f-4abc-a5d0-995e3fec5a4f
-    m_ActionName: Controls/Move
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 92ccbb98-6f35-459c-a62d-b8d2e3a83a06
-    m_ActionName: Controls/Jump
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 721b5372-f0f0-475b-bbec-1b6d1e6232cf
-    m_ActionName: Controls/Melee
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Controls
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &-830695237746428496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7545545520954816333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8263b06a8f22b0b4ba4bf5cfb35fe99e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7545545521030249613
 GameObject:
   m_ObjectHideFlags: 0
