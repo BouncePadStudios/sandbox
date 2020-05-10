@@ -39,10 +39,12 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     private bool isCrouched = false;
+    private bool wasCrouching = false;
 
     private float horizontalAxis;
     private float verticalAxis;
     private bool attack;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     public void OnMove(float h, float v)
@@ -105,7 +108,41 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
             //animator.Play("Player_jump");
+            animator.SetBool("IsJumping", true);
         }
+    }
+
+    public void OnCrouch()
+    {
+       /* if (isGrounded)
+        {
+            // if Crouching
+            if (isCrouched)
+            {
+                if (!wasCrouching)
+                {
+                    wasCrouching = true;
+                    animator.SetBool("IsCrouching", isCrouched);
+                }
+
+                // Reduce movement speed here
+
+                // Disable top collider when crouching 
+
+            }
+            else 
+            {
+                // Enable the collider when not crouching 
+
+                if (wasCrouching)
+                {
+                    wasCrouching = false;
+                    animator.SetBool("IsCrouching", isCrouched);
+                }
+
+            }
+
+        }*/
     }
 
     IEnumerator DoAttack(int i)
@@ -131,15 +168,19 @@ public class PlayerController : MonoBehaviour
                 isAirAttacking = false;
                 isAttacking = false;
             }
+
+            animator.SetBool("IsJumping", false);
         }
         else
         {
             isGrounded = false;
+            isCrouched = false;
 
             //if (!isAttacking)
             //    animator.Play("Player_jump");
         }
 
+        // HORIZONTAL MOVEMENT 
         if (horizontalAxis > 0.1f) // move right 
         {
             rb2d.velocity = new Vector2(runSpeed, rb2d.velocity.y);
@@ -166,6 +207,20 @@ public class PlayerController : MonoBehaviour
 
             //if (isFree())
             //    animator.Play("Player_idle");
+        }
+        
+        // VERTICAL MOVEMENT 
+        if (verticalAxis > 0.1f)
+        {
+            if (isGrounded)
+                isCrouched = false;
+                animator.SetBool("IsCrouching", isCrouched);
+
+        }
+        else if (verticalAxis < -0.1f)
+        {
+            isCrouched = true;
+            animator.SetBool("IsCrouching", isCrouched);
         }
 
     }

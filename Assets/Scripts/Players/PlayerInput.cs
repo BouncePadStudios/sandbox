@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour
     private string verticalAxis;
     private string jumpButton;
     private string attackButton;
+    //private string crouchButton;
     private int controllerNum;  //not used presently
 
     private PlayerController player;
@@ -33,6 +34,7 @@ public class PlayerInput : MonoBehaviour
         verticalAxis = type + "Vertical" + id;
         jumpButton = type + "Jump" + id;
         attackButton = type + "Attack" + id;
+        //crouchButton = type + "Crouch" + id;
 
     }
 
@@ -44,6 +46,8 @@ public class PlayerInput : MonoBehaviour
             player.OnJump();
         if (Input.GetButton(attackButton))
             player.OnAttack();
+        if (Input.GetAxis(verticalAxis) < -0.1f)
+            player.OnCrouch();
 
         //always send axis info
         hAxis = Input.GetAxis(horizontalAxis);

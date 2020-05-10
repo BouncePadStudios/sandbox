@@ -463,6 +463,9 @@ MonoBehaviour:
   groundCheckR: {fileID: 7545545520426578296}
   runSpeed: 1.5
   jumpSpeed: 4
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7545545521030249613
 GameObject:
   m_ObjectHideFlags: 0

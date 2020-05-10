@@ -6406,6 +6406,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4235170897535841772, guid: 1cd7963a3ccf48443b1d1fe2c20173bd,
+        type: 3}
+      propertyPath: CharacterEarthPrefab
+      value: 
+      objectReference: {fileID: 7545545520954816333, guid: bac744cfbf600cb40b6f28213d097ef8,
+        type: 3}
     - target: {fileID: 4235170897535841773, guid: 1cd7963a3ccf48443b1d1fe2c20173bd,
         type: 3}
       propertyPath: m_Name
