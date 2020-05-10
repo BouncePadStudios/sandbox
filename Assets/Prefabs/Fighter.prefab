@@ -47,6 +47,39 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.37812436}
   serializedVersion: 2
   m_Radius: 0.121875644
+<<<<<<< Updated upstream
+=======
+--- !u!1 &1704710253550623847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 379865685866534474}
+  m_Layer: 0
+  m_Name: CeilingCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &379865685866534474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704710253550623847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.107, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7545545520954816320}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &2741848452842676043
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +95,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
   m_IsActive: 1
+=======
+  m_IsActive: 0
+>>>>>>> Stashed changes
 --- !u!4 &5397792674311784186
 Transform:
   m_ObjectHideFlags: 0
@@ -77,7 +114,11 @@ Transform:
   - {fileID: 5626588716846313308}
   - {fileID: 1579078423891192606}
   m_Father: {fileID: 7545545520954816320}
+<<<<<<< Updated upstream
   m_RootOrder: 3
+=======
+  m_RootOrder: 4
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5423498335689795838
 GameObject:
@@ -111,7 +152,11 @@ Transform:
   - {fileID: 7545545521030249614}
   - {fileID: 7545545520180180234}
   m_Father: {fileID: 7545545520954816320}
+<<<<<<< Updated upstream
   m_RootOrder: 4
+=======
+  m_RootOrder: 5
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5444438156839842649
 GameObject:
@@ -154,7 +199,11 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+<<<<<<< Updated upstream
   m_IsTrigger: 0
+=======
+  m_IsTrigger: 1
+>>>>>>> Stashed changes
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.37812436}
@@ -175,7 +224,11 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
   m_IsActive: 1
+=======
+  m_IsActive: 0
+>>>>>>> Stashed changes
 --- !u!4 &7545545519457933930
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +241,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7545545520954816320}
+<<<<<<< Updated upstream
   m_RootOrder: 0
+=======
+  m_RootOrder: 1
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7545545520180180232
 GameObject:
@@ -262,7 +319,11 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< Updated upstream
   m_IsActive: 1
+=======
+  m_IsActive: 0
+>>>>>>> Stashed changes
 --- !u!4 &7545545520426578296
 Transform:
   m_ObjectHideFlags: 0
@@ -275,7 +336,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7545545520954816320}
+<<<<<<< Updated upstream
   m_RootOrder: 1
+=======
+  m_RootOrder: 2
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7545545520604540642
 GameObject:
@@ -402,10 +467,20 @@ GameObject:
   - component: {fileID: 7545545520954816320}
   - component: {fileID: 7545545520954816335}
   - component: {fileID: 7545545520954816334}
+<<<<<<< Updated upstream
   - component: {fileID: 7545545520954816323}
   - component: {fileID: 7545545520954816322}
   - component: {fileID: 2804257820266609330}
   - component: {fileID: 7545545520954816321}
+=======
+  - component: {fileID: 7545545520954816322}
+  - component: {fileID: 4710384249729047521}
+  - component: {fileID: 7237190799558942830}
+  - component: {fileID: 2804257820266609330}
+  - component: {fileID: 7545545520954816321}
+  - component: {fileID: 4196092559365808841}
+  - component: {fileID: 7605968051050670056}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Untagged
@@ -424,6 +499,10 @@ Transform:
   m_LocalPosition: {x: -0.52614045, y: 0.019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< Updated upstream
+=======
+  - {fileID: 379865685866534474}
+>>>>>>> Stashed changes
   - {fileID: 7545545519457933930}
   - {fileID: 7545545520426578296}
   - {fileID: 7545545521423234673}
@@ -501,6 +580,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< Updated upstream
 --- !u!61 &7545545520954816323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -527,6 +607,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21591613, y: 0.44190365}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!50 &7545545520954816322
 Rigidbody2D:
   serializedVersion: 4
@@ -548,6 +630,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+<<<<<<< Updated upstream
+=======
+--- !u!58 &4710384249729047521
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545545520954816333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.03}
+  serializedVersion: 2
+  m_Radius: 0.1218756
+--- !u!58 &7237190799558942830
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545545520954816333}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.18}
+  serializedVersion: 2
+  m_Radius: 0.1218756
+>>>>>>> Stashed changes
 --- !u!114 &2804257820266609330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,7 +684,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7545545520954816333}
+<<<<<<< Updated upstream
   m_Enabled: 1
+=======
+  m_Enabled: 0
+>>>>>>> Stashed changes
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7c8d6b77be008148a77b7a194874c81, type: 3}
   m_Name: 
@@ -583,6 +704,49 @@ MonoBehaviour:
   groundCheckR: {fileID: 7545545520426578296}
   runSpeed: 1.5
   jumpSpeed: 4
+<<<<<<< Updated upstream
+=======
+--- !u!114 &4196092559365808841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545545520954816333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35097b8259c6034db2ebb028a76176f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 700
+  m_CrouchSpeed: 0.4
+  m_MovementSmoothing: 0.05
+  m_AirControl: 1
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  m_GroundCheck: {fileID: 7545545521423234673}
+  m_CeilingCheck: {fileID: 379865685866534474}
+  m_CrouchDisableCollider: {fileID: 0}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7605968051050670056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545545520954816333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0119501c4d950774593e1a5d278d3985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes
 --- !u!1 &7545545521030249613
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,5 +832,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7545545520954816320}
+<<<<<<< Updated upstream
   m_RootOrder: 2
+=======
+  m_RootOrder: 3
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
