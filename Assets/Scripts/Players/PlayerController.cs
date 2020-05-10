@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [SerializeField]
-    GameObject[] attackHitBoxes = new GameObject[4];
+    GameObject[] attackHitBoxes = new GameObject[5];
 
     [SerializeField]
     private Transform groundCheck;
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
-            int i;
+            int i = -1;
 
             // Select the attack animation 
             if (isGrounded)
@@ -84,7 +84,20 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     // Melee attack
-                    i = Random.Range(1, 3);
+                    if (i == -1)
+                    {
+                        i = 0;
+                    } 
+                    else if (i == 0)
+                    {
+                        i = 1;
+                    }
+                    else
+                    {
+                        i = 2;
+                    }
+
+                    //i = Random.Range(1, 3);
                     //animator.Play("Player_attack" + i);
                 }
 
@@ -97,7 +110,10 @@ public class PlayerController : MonoBehaviour
                 i = 4;
             }
 
-            i -= 1; // arrays start at 0 so convert to accomodate for that 
+            animator.SetBool("IsAttacking", true);
+            animator.SetInteger("AttackNum", i);
+
+            //i -= 1; // arrays start at 0 so convert to accomodate for that 
             StartCoroutine(DoAttack(i));
         }
     }
@@ -151,6 +167,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(hitboxDuration);
         attackHitBoxes[i].SetActive(false);
         isAttacking = false;
+        animator.SetBool("IsAttacking", false);
     }
 
     private void FixedUpdate()
