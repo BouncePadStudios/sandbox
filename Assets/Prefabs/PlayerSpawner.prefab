@@ -53,6 +53,8 @@ MonoBehaviour:
     type: 3}
   CharacterFirePrefab: {fileID: 7545545520954816333, guid: bc940059d2685044c84ff559ff9a9de4,
     type: 3}
+  CharacterEarthPrefab: {fileID: 7545545520954816333, guid: bac744cfbf600cb40b6f28213d097ef8,
+    type: 3}
 --- !u!1 &4235170899058259410
 GameObject:
   m_ObjectHideFlags: 0

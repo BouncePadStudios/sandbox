@@ -57,7 +57,8 @@ public class PlayerController : MonoBehaviour
     {
         horizontalAxis = h;
         verticalAxis = v;
-        
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalAxis));
     }
 
     public void OnAttack()
@@ -74,21 +75,21 @@ public class PlayerController : MonoBehaviour
                 if (isCrouched)
                 {
                     // Crouch attack
-                    animator.Play("Player_attack3");
+                    //animator.Play("Player_attack3");
                     i = 3;
                 }
                 else
                 {
                     // Melee attack
                     i = Random.Range(1, 3);
-                    animator.Play("Player_attack" + i);
+                    //animator.Play("Player_attack" + i);
                 }
 
             }
             else
             {
                 // Aerial attack 
-                animator.Play("Player_attack4");
+                //animator.Play("Player_attack4");
                 isAirAttacking = true;
                 i = 4;
             }
@@ -103,7 +104,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
-            animator.Play("Player_jump");
+            //animator.Play("Player_jump");
         }
     }
 
@@ -135,16 +136,16 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
 
-            if (!isAttacking)
-                animator.Play("Player_jump");
+            //if (!isAttacking)
+            //    animator.Play("Player_jump");
         }
 
         if (horizontalAxis > 0.1f) // move right 
         {
             rb2d.velocity = new Vector2(runSpeed, rb2d.velocity.y);
 
-            if (isFree())
-                animator.Play("Player_run");
+            //if (isFree())
+            //    animator.Play("Player_run");
 
             // Change character position 
             transform.localScale = new Vector3(1, 1, 1);
@@ -153,8 +154,8 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.velocity = new Vector2(-runSpeed, rb2d.velocity.y);
 
-            if (isFree())
-                animator.Play("Player_run");
+            //if (isFree())
+            //    animator.Play("Player_run");
 
             // Change character position
             transform.localScale = new Vector3(-1, 1, 1);
@@ -163,8 +164,8 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.velocity = new Vector2(0, rb2d.velocity.y);
 
-            if (isFree())
-                animator.Play("Player_idle");
+            //if (isFree())
+            //    animator.Play("Player_idle");
         }
 
     }

@@ -10,6 +10,7 @@ public class PlayerSpawner : MonoBehaviour
 
     [SerializeField] private GameObject CharacterWaterPrefab;
     [SerializeField] private GameObject CharacterFirePrefab;
+    [SerializeField] private GameObject CharacterEarthPrefab;
 
     private GameObject PlayerOne;
     private GameObject PlayerTwo;
@@ -33,6 +34,13 @@ public class PlayerSpawner : MonoBehaviour
 
             case PlayerChoice.Fire:
                 PlayerOne = Instantiate(CharacterFirePrefab, playerOneSpawnPos);
+                PlayerOne.GetComponent<PlayerInput>().SetupInput(controlType, 1);
+                break;
+
+
+            // Added this to test the Fighter prefab - Eren
+            case PlayerChoice.Earth:
+                PlayerOne = Instantiate(CharacterEarthPrefab, playerOneSpawnPos);
                 PlayerOne.GetComponent<PlayerInput>().SetupInput(controlType, 1);
                 break;
         }
