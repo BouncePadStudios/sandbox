@@ -57,6 +57,12 @@ public class PlayerSpawner : MonoBehaviour
                 PlayerTwo = Instantiate(CharacterFirePrefab, playerTwoSpawnPos);
                 PlayerTwo.GetComponent<PlayerInput>().SetupInput(controlType, 2);
                 break;
+
+            // Added this to test the Fighter prefab - Eren
+            case PlayerChoice.Earth:
+                PlayerTwo = Instantiate(CharacterEarthPrefab, playerTwoSpawnPos);
+                PlayerTwo.GetComponent<PlayerInput>().SetupInput(controlType, 2);
+                break;
         }
     }
 
