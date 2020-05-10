@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba20e113f1b30864c85a055b32702ff4, type: 3}
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
-  playerOneChoice: 0
-  playerTwoChoice: 1
+  playerOneChoice: 2
+  playerTwoChoice: 2
   numPlayers: 1

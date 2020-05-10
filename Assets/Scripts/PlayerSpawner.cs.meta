@@ -3,7 +3,14 @@ guid: b53832ba9a67b99428ec0847dffc1bca
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameSettings: {instanceID: 0}
+  - playerInfo: {instanceID: 0}
+  - playerOneSpawnPos: {instanceID: 0}
+  - playerTwoSpawnPos: {instanceID: 0}
+  - CharacterWaterPrefab: {instanceID: 0}
+  - CharacterFirePrefab: {instanceID: 0}
+  - CharacterEarthPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
