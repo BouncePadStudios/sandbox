@@ -742,16 +742,18 @@ MonoBehaviour:
   attack2: 0
   attack3: 0
   crouch: 0
-  canAttack: 0
+  canAttack: 1
   gettingHit: 0
   currentlyAttacking: 0
   dontMove: 0
-  onGround: 0
-  lookRight: 0
+  onGround: 1
+  lookRight: 1
   handleDC: {fileID: 0}
   handleAnim: {fileID: 0}
   handleMovement: {fileID: 0}
-  movementColliders: []
+  movementColliders:
+  - {fileID: 62343011490663362}
+  - {fileID: 2476290850431111543}
 --- !u!114 &4867183304233703496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,6 +766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8adb9504df181de40a5bb324d0bc7d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  acceleration: 30
+  airAcceleration: 15
+  maxSpeed: 60
+  jumpSpeed: 5
+  jumpDuration: 5
 --- !u!114 &1397144263623478127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,7 +804,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96fc22cf0e890834bb0365058d5d6490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageColliders: []
+  damageColliders:
+  - {fileID: 6455540916535593837}
+  - {fileID: 7545545520604540642}
+  - {fileID: 7545545520747656818}
+  - {fileID: 7545545521030249613}
+  - {fileID: 7545545520180180232}
 --- !u!1 &7545545521030249613
 GameObject:
   m_ObjectHideFlags: 0

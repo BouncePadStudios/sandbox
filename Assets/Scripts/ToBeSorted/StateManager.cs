@@ -109,14 +109,14 @@ public class StateManager : MonoBehaviour
                 case HandleDamageColliders.DamageType.melee:
                     StartCoroutine(CloseImmortality(0.3f));
                     break;
-                /*case HandleDamageColliders.DamageType.range:
+                case HandleDamageColliders.DamageType.range:
                     handleMovement.AddVelocityOnCharacter(
                         ((!lookRight) ? Vector3.right * 1 : Vector3.right * -1) + Vector3.up
                         , 0.5f
                         );
 
                     StartCoroutine(CloseImmortality(1));
-                    break;*/
+                    break;
             }
 
             health -= damage;

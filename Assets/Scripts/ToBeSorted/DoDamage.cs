@@ -23,7 +23,7 @@ public class DoDamage : MonoBehaviour
             if(otherState != states)
             {
                 if(!otherState.currentlyAttacking) // prevents dealing damage if you are already dealt damage
-                    otherState.TakeDamage(30, damageType);
+                    otherState.TakeDamage(10, damageType);
             }
         }
     }

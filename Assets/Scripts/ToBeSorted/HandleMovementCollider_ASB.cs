@@ -15,7 +15,7 @@ public class HandleMovementCollider_ASB : StateMachineBehaviour
         if (states == null)
             states = animator.transform.GetComponentInParent<StateManager>();
 
-        //states.CloseMovementCollider(index);
+        states.CloseMovementCollider(index);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,7 +30,7 @@ public class HandleMovementCollider_ASB : StateMachineBehaviour
         if (states == null)
             states = animator.transform.GetComponentInParent<StateManager>();
 
-        //states.OpenMovementCollider(index);
+        states.OpenMovementCollider(index);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

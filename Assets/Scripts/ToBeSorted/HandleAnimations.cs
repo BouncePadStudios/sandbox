@@ -8,7 +8,7 @@ public class HandleAnimations : MonoBehaviour
     public Animator anim;
     StateManager states;
 
-    public float attackRate = .3f;
+    public float attackRate = .1f;
     public AttacksBase[] attacks = new AttacksBase[2];
 
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class HandleAnimations : MonoBehaviour
         anim.SetBool("IsCrouching", states.crouch);
 
         float movement = Mathf.Abs(states.horizontal);
-        anim.SetFloat("Movement", movement);
+        anim.SetFloat("Speed", movement);
 
         if(states.vertical < 0)
         {
@@ -91,15 +91,25 @@ public class HandleAnimations : MonoBehaviour
 
     public void JumpAnim()
     {
+        anim.SetBool("Attack0", false);
+        anim.SetBool("Attack1", false);
 
-        if (states.onGround)
+        anim.SetBool("isJumping", true);
+        StartCoroutine(CloseBoolInAnim("isJumping"));
+        /*if (states.onGround)
         {
             anim.SetBool("Attack0", false);
             anim.SetBool("Attack1", false);
 
             anim.SetBool("InAir", true);
             anim.SetBool("IsJumping", true);
-        }
+        }*/
+    }
+    
+    IEnumerator CloseBoolInAnim(string name)
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool(name, false);
     }
 }
 
