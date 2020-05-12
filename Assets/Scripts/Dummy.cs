@@ -26,7 +26,7 @@ public class Dummy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.transform.parent.name == "DamageCollision")
+        if (collision.gameObject.transform.parent.name == "DamageColliders")
         {
             // take damage 
             isShaking = true;

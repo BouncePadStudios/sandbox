@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class PlayerInput : MonoBehaviour
+public class InputHandler : MonoBehaviour
 {
     private string horizontalAxis;
     private string verticalAxis;
@@ -9,19 +11,22 @@ public class PlayerInput : MonoBehaviour
     //private string crouchButton;
     private int controllerNum;  //not used presently
 
-    private PlayerController player;
-
     private bool usingControllers = false;
-    private float hAxis;
-    private float vAxis;
 
+    float horizontal;
+    float vertical;
+    bool attack0;
+    bool attack1;
+    bool attack2;
+    bool attack3;
+
+    StateManager states; 
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        player = GetComponent<PlayerController>();
+        states = GetComponent<StateManager>();        
     }
-
 
     public void SetupInput(string type, int id)
     {
@@ -38,23 +43,14 @@ public class PlayerInput : MonoBehaviour
 
     }
 
-
     private void FixedUpdate()
     {
-        Debug.Log("it's here");
-        if (Input.GetButton(jumpButton))
-            player.OnJump();
-        if (Input.GetButton(attackButton))
-            player.OnAttack();
-        if (Input.GetAxis(verticalAxis) < -0.1f)
-            player.OnCrouch();
-
-        //always send axis info
-        hAxis = Input.GetAxis(horizontalAxis);
-        vAxis = Input.GetAxis(verticalAxis);
-
-        player.OnMove(hAxis, vAxis);
-
-
+        horizontal = Input.GetAxis(horizontalAxis);
+        vertical = Input.GetAxis(verticalAxis);
+        attack0 = Input.GetButton(attackButton);
+        
+        states.horizontal = horizontal;
+        states.vertical = vertical;
+        states.attack0 = attack0;
     }
 }

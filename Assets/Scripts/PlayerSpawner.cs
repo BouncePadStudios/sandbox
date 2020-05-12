@@ -29,19 +29,19 @@ public class PlayerSpawner : MonoBehaviour
         {
             case PlayerChoice.Water:
                 PlayerOne = Instantiate(CharacterWaterPrefab, playerOneSpawnPos);
-                PlayerOne.GetComponent<PlayerInput>().SetupInput(controlType, 1);
+                PlayerOne.GetComponent<InputHandler>().SetupInput(controlType, 1);
                 break;
 
             case PlayerChoice.Fire:
                 PlayerOne = Instantiate(CharacterFirePrefab, playerOneSpawnPos);
-                PlayerOne.GetComponent<PlayerInput>().SetupInput(controlType, 1);
+                PlayerOne.GetComponent<InputHandler>().SetupInput(controlType, 1);
                 break;
 
 
             // Added this to test the Fighter prefab - Eren
             case PlayerChoice.Earth:
                 PlayerOne = Instantiate(CharacterEarthPrefab, playerOneSpawnPos);
-                PlayerOne.GetComponent<PlayerInput>().SetupInput(controlType, 1);
+                PlayerOne.GetComponent<InputHandler>().SetupInput(controlType, 1);
                 break;
         }
 
@@ -50,18 +50,18 @@ public class PlayerSpawner : MonoBehaviour
         {
             case PlayerChoice.Water:
                 PlayerTwo = Instantiate(CharacterWaterPrefab, playerTwoSpawnPos);
-                PlayerTwo.GetComponent<PlayerInput>().SetupInput(controlType, 2);
+                PlayerTwo.GetComponent<InputHandler>().SetupInput(controlType, 2);
                 break;
 
             case PlayerChoice.Fire:
                 PlayerTwo = Instantiate(CharacterFirePrefab, playerTwoSpawnPos);
-                PlayerTwo.GetComponent<PlayerInput>().SetupInput(controlType, 2);
+                PlayerTwo.GetComponent<InputHandler>().SetupInput(controlType, 2);
                 break;
 
             // Added this to test the Fighter prefab - Eren
             case PlayerChoice.Earth:
                 PlayerTwo = Instantiate(CharacterEarthPrefab, playerTwoSpawnPos);
-                PlayerTwo.GetComponent<PlayerInput>().SetupInput(controlType, 2);
+                PlayerTwo.GetComponent<InputHandler>().SetupInput(controlType, 2);
                 break;
         }
     }
