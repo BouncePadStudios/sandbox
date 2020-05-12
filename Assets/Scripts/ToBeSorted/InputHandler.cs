@@ -48,7 +48,7 @@ public class InputHandler : MonoBehaviour
         horizontal = Input.GetAxis(horizontalAxis);
         vertical = Input.GetAxis(verticalAxis);
         attack0 = Input.GetButton(attackButton);
-
+        
         states.horizontal = horizontal;
         states.vertical = vertical;
         states.attack0 = attack0;

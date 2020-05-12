@@ -9,11 +9,11 @@ public class HandleMovement : MonoBehaviour
     StateManager states;
     HandleAnimations anim;
 
-    public float acceleration = 30;
-    public float airAcceleration = 15;
-    public float maxSpeed = 60;
-    public float jumpSpeed = 5;
-    public float jumpDuration = 5;
+    public float acceleration = 30.0f;
+    public float airAcceleration = 15.0f;
+    public float maxSpeed = 60.0f;
+    public float jumpSpeed = 4.0f;
+    public float jumpDuration = 5.0f;
     float actualSpeed;
     bool justJumped;
     bool canVariableJump;
@@ -41,29 +41,61 @@ public class HandleMovement : MonoBehaviour
     {
         actualSpeed = this.maxSpeed;
 
-        if(states.onGround && !states.currentlyAttacking)
+        if(!states.currentlyAttacking)
         {
-            rb.AddForce(new Vector2((states.horizontal * actualSpeed) - rb.velocity.x * this.acceleration, 0));
+            //rb.AddForce(new Vector2((states.horizontal * actualSpeed) - rb.velocity.x * this.acceleration, 0));
             //rb.AddForce(new Vector2((states.horizontal * actualSpeed) - rb.velocity.x * this.acceleration, rb.velocity.y));
+            //rb.velocity = new Vector2(1.5f, rb.velocity.y);
+            if (states.horizontal > 0.0f) // move right 
+            {
+                rb.velocity = new Vector2(1.5f, rb.velocity.y);
+
+
+                // Change character position 
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else if (states.horizontal < -0.0f) // move left 
+            {
+                rb.velocity = new Vector2(-1.5f, rb.velocity.y);
+
+
+                // Change character position
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else // no horizontal movement 
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+
+            }
         }
 
         // Stop character if sliding  
-        if (states.horizontal == 0 && states.onGround)
+        /*if (states.horizontal == 0 && states.onGround)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
-        }
+        }*/
     }
 
     void Jump()
     {
         if(states.vertical > 0)
         {
-            if (!justJumped)
+            if (!justJumped && states.onGround) // old physics
+            {
+                anim.JumpAnim();
+
+                rb.velocity = new Vector2(rb.velocity.x, 4f); 
+                jumpTimer = 0;
+                canVariableJump = true;
+            }
+
+            /*if (!justJumped)
             {
                 justJumped = true;
 
                 if (states.onGround)
                 {
+
                     anim.JumpAnim();
 
                     rb.velocity = new Vector3(rb.velocity.x, this.jumpSpeed);
@@ -82,7 +114,7 @@ public class HandleMovement : MonoBehaviour
                         rb.velocity = new Vector3(rb.velocity.x, this.jumpSpeed);
                     }
                 }
-            }
+            }*/
         } 
         else
         {

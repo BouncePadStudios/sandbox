@@ -27,6 +27,7 @@ public class HandleAnimations : MonoBehaviour
         anim.SetBool("IsCrouching", states.crouch);
 
         float movement = Mathf.Abs(states.horizontal);
+
         anim.SetFloat("Speed", movement);
 
         if(states.vertical < 0)
@@ -94,8 +95,8 @@ public class HandleAnimations : MonoBehaviour
         anim.SetBool("Attack0", false);
         anim.SetBool("Attack1", false);
 
-        anim.SetBool("isJumping", true);
-        StartCoroutine(CloseBoolInAnim("isJumping"));
+        anim.SetBool("IsJumping", true);
+        StartCoroutine(CloseBoolInAnim("IsJumping"));
         /*if (states.onGround)
         {
             anim.SetBool("Attack0", false);

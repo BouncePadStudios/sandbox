@@ -41,7 +41,7 @@ public class PlayerInput : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        Debug.Log("it's here");
         if (Input.GetButton(jumpButton))
             player.OnJump();
         if (Input.GetButton(attackButton))
