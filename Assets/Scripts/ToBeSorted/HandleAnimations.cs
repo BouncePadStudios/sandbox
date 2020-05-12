@@ -30,7 +30,7 @@ public class HandleAnimations : MonoBehaviour
 
         anim.SetFloat("Speed", movement);
 
-        if(states.vertical < 0)
+        if(states.onGround && states.vertical < 0)
         {
             states.crouch = true;
         }
