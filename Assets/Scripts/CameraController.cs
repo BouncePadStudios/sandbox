@@ -2,8 +2,8 @@
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private CamSettings settings;
-    [SerializeField] private Camera cam;
+    [SerializeField] private CamSettings settings = null;
+    [SerializeField] private Camera cam = null;
 
     public Transform targetOne = null;
     public Transform targetTwo = null;

@@ -36,13 +36,13 @@ public class StateManager : MonoBehaviour
     public GameObject[] movementColliders;
 
     [SerializeField]
-    private Transform groundCheck;
+    private Transform groundCheck = null;
 
     [SerializeField]
-    private Transform groundCheckL;
+    private Transform groundCheckL = null;
 
     [SerializeField]
-    private Transform groundCheckR;
+    private Transform groundCheckR = null;
 
     // Start is called before the first frame update
     void Start()

@@ -9,9 +9,9 @@ public class PlayerSpawner : MonoBehaviour
     public Transform playerOneSpawnPos;
     public Transform playerTwoSpawnPos;
 
-    [SerializeField] private GameObject CharacterWaterPrefab;
-    [SerializeField] private GameObject CharacterFirePrefab;
-    [SerializeField] private GameObject CharacterEarthPrefab;
+    [SerializeField] private GameObject CharacterWaterPrefab = null;
+    [SerializeField] private GameObject CharacterFirePrefab = null;
+    [SerializeField] private GameObject CharacterEarthPrefab = null;
 
     private GameObject PlayerOne;
     private GameObject PlayerTwo;

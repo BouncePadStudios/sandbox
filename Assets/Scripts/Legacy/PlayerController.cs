@@ -13,13 +13,13 @@ public class PlayerController : MonoBehaviour
     GameObject[] attackHitBoxes = new GameObject[5];
 
     [SerializeField]
-    private Transform groundCheck;
+    private Transform groundCheck = null;
 
     [SerializeField]
-    private Transform groundCheckL;
+    private Transform groundCheckL = null;
 
     [SerializeField]
-    private Transform groundCheckR;
+    private Transform groundCheckR = null;
 
     // STORE THESE VALUES IN THE PLAYERINFO SCRIPTABLE OBJECT ATTACHED
     [SerializeField]

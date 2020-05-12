@@ -2,7 +2,7 @@
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private PlayerSpawner playerSpawner;
+    [SerializeField] private PlayerSpawner playerSpawner = null;
 
     private void Awake()
     {
