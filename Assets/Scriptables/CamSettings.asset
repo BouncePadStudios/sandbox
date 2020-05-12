@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CamSettings
   m_EditorClassIdentifier: 
   zoomLevelMax: 1.8
-  zoomLevelMin: 0.65
+  zoomLevelMin: 0.75
   zoomSpeed: 0.01
   maxViewportDistance: 0.8
   minViewportDistance: 0.6
