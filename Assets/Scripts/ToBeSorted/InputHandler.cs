@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-
     private string horizontalAxis;
     private string verticalAxis;
     private string jumpButton;
     private string attackButton;
     //private string crouchButton;
     private int controllerNum;  //not used presently
-
-    private PlayerController player;
 
     private bool usingControllers = false;
 
@@ -29,7 +26,6 @@ public class InputHandler : MonoBehaviour
     void Start()
     {
         states = GetComponent<StateManager>();        
-        player = GetComponent<PlayerController>();
     }
 
     public void SetupInput(string type, int id)

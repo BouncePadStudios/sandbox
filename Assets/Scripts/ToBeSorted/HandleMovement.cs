@@ -43,8 +43,8 @@ public class HandleMovement : MonoBehaviour
 
         if(states.onGround && !states.currentlyAttacking)
         {
-            //rb.AddForce(new Vector2((states.horizontal * actualSpeed) - rb.velocity.x * this.acceleration, 0));
-            rb.AddForce(new Vector2((states.horizontal * actualSpeed) - rb.velocity.x * this.acceleration, rb.velocity.y));
+            rb.AddForce(new Vector2((states.horizontal * actualSpeed) - rb.velocity.x * this.acceleration, 0));
+            //rb.AddForce(new Vector2((states.horizontal * actualSpeed) - rb.velocity.x * this.acceleration, rb.velocity.y));
         }
 
         // Stop character if sliding  

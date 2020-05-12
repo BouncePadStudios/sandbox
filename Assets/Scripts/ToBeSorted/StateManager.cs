@@ -35,6 +35,15 @@ public class StateManager : MonoBehaviour
 
     public GameObject[] movementColliders;
 
+    [SerializeField]
+    private Transform groundCheck;
+
+    [SerializeField]
+    private Transform groundCheckL;
+
+    [SerializeField]
+    private Transform groundCheckR;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +55,7 @@ public class StateManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        spriteRenderer.flipX = lookRight;
+        spriteRenderer.flipX = !lookRight;
 
         onGround = isOnGround();
 
@@ -68,12 +77,21 @@ public class StateManager : MonoBehaviour
 
     bool isOnGround()
     {
-        bool retVal = false;
+        /*bool retVal = false;
 
         LayerMask layer = ~(1 << gameObject.layer | 1 << 3);
         retVal = Physics2D.Raycast(transform.position, -Vector2.up, 0.1f, layer);
 
-        return retVal;
+        return retVal;*/
+
+        if ((Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"))) ||
+            (Physics2D.Linecast(transform.position, groundCheckL.position, 1 << LayerMask.NameToLayer("Ground"))) ||
+            (Physics2D.Linecast(transform.position, groundCheckR.position, 1 << LayerMask.NameToLayer("Ground"))))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public void ResetStateInputs()
@@ -109,7 +127,7 @@ public class StateManager : MonoBehaviour
                 case HandleDamageColliders.DamageType.melee:
                     StartCoroutine(CloseImmortality(0.3f));
                     break;
-                case HandleDamageColliders.DamageType.range:
+                case HandleDamageColliders.DamageType.range: // knockback attack
                     handleMovement.AddVelocityOnCharacter(
                         ((!lookRight) ? Vector3.right * 1 : Vector3.right * -1) + Vector3.up
                         , 0.5f

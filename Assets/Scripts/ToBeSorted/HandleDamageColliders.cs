@@ -63,7 +63,7 @@ public class HandleDamageColliders : MonoBehaviour
         array[index].GetComponent<DoDamage>().damageType = damageType;
     }
 
-    private void CloseColliders() {
+    public void CloseColliders() {
         for (int i = 0; i < damageColliders.Length; i ++)
         {
             damageColliders[i].SetActive(false);

@@ -15,7 +15,7 @@ public class OpenDamageCollider : StateMachineBehaviour
         if (states == null)
             states = animator.transform.GetComponentInParent<StateManager>();
 
-        //states.handleDC.OpenCollider(dcType, delay, damageType);
+        states.handleDC.OpenCollider(dcType, delay, damageType);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,7 +30,7 @@ public class OpenDamageCollider : StateMachineBehaviour
         if (states == null)
             states = animator.transform.GetComponentInParent<StateManager>();
 
-        //states.handleDC.CloseColliders();
+        states.handleDC.CloseColliders();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
