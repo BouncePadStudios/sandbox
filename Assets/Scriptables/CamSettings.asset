@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 677d626680015f54a8531a5d3343df8c, type: 3}
-  m_Name: MasterManager
+  m_Script: {fileID: 11500000, guid: f92180d8c10593f4c97534e7a854e3eb, type: 3}
+  m_Name: CamSettings
   m_EditorClassIdentifier: 
-  _playerSpawner: {fileID: 0}
-  inputOne: {fileID: 0}
-  inputTwo: {fileID: 0}
+  zoomLevelMax: 1.8
+  zoomLevelMin: 0.65
+  zoomSpeed: 0.01
+  maxViewportDistance: 0.8
+  minViewportDistance: 0.6

@@ -4,6 +4,7 @@ public class PlayerSpawner : MonoBehaviour
 {
     public Settings gameSettings;
     public PlayerInfo playerInfo;
+    public CameraController cam;
 
     public Transform playerOneSpawnPos;
     public Transform playerTwoSpawnPos;
@@ -64,6 +65,10 @@ public class PlayerSpawner : MonoBehaviour
                 PlayerTwo.GetComponent<InputHandler>().SetupInput(controlType, 2);
                 break;
         }
+
+        cam.targetOne = PlayerOne.transform;
+        cam.targetTwo = PlayerTwo.transform;
+
     }
 
 }
