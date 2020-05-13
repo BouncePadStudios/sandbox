@@ -46,7 +46,9 @@ public class HandleAnimations : MonoBehaviour
     {
         if(states.canAttack)
         {
-            if (states.attack1)
+
+            // Melee attack 
+            if (states.attack0)
             {
                 attacks[0].attack = true;
                 attacks[0].attackTimer = 0;
@@ -57,7 +59,7 @@ public class HandleAnimations : MonoBehaviour
             {
                 attacks[0].attackTimer += Time.deltaTime;
 
-                if (attacks[0].attackTimer > attackRate || attacks[0].timesPressed >= 3) // Reset the attack
+                if (attacks[0].attackTimer > attackRate) // Reset the attackif (attacks[0].attackTimer > attackRate || attacks[0].timesPressed >= 3) // Reset the attack
                 {
                     attacks[0].attack = false;
                     attacks[0].attackTimer = 0;
@@ -65,7 +67,8 @@ public class HandleAnimations : MonoBehaviour
                 }
             }
 
-            if (states.attack2)
+            // Ranged attack
+            if (states.attack1)
             {
                 attacks[1].attack = true;
                 attacks[1].attackTimer = 0;
