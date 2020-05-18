@@ -1,18 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class EventSystemUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static EventSystemUI current;
+
+    private void Awake()
     {
-        
+        current = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    //define UI events that the UI scripts can subscribe to and that the gameObjects can notifty
+    public event Action<int, int> onHealthChanged;
+    public void ChangeHealth(int id, int health)
     {
-        
+        onHealthChanged?.Invoke(id, health);
+    }
+
+    public event Action<int, int> onManaChanged;
+    public void ChangeMana(int id, int amount)
+    {
+        onManaChanged?.Invoke(id, amount);
+    }
+
+    public event Action<int> onTimeChanged;
+    public void ChangeTimeUI(int time)
+    {
+        onTimeChanged?.Invoke(time);
     }
 }
