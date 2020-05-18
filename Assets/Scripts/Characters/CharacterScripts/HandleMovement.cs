@@ -26,6 +26,7 @@ public class HandleMovement : MonoBehaviour
         states = GetComponent<StateManager>();
         anim = GetComponent<HandleAnimations>();
         rb.freezeRotation = true;
+       
     }
 
     private void FixedUpdate()
