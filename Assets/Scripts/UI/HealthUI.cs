@@ -35,7 +35,10 @@ public class HealthUI : MonoBehaviour
         if (playerId == id)
         {
             shakeTimer = shakeDuration;//start shaking
-            healthText.text = health.ToString();
+            if (health < 0)
+                healthText.text = "0"; //force non-negative values for UI
+            else
+                healthText.text = health.ToString();
         }
             
     }
