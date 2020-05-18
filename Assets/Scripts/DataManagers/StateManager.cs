@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
-
+    public int playerId;
     public int health = 100;
 
     public float horizontal;
@@ -138,6 +138,7 @@ public class StateManager : MonoBehaviour
             }
 
             health -= damage;
+            EventSystemUI.current.ChangeHealth(playerId, health); //update UI
             gettingHit = true;
         }
     }

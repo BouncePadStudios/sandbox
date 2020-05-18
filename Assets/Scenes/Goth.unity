@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 12185321}
   - component: {fileID: 12185323}
   - component: {fileID: 12185322}
+  - component: {fileID: 12185324}
   m_Layer: 5
   m_Name: PlayerOne
   m_TagString: Untagged
@@ -280,6 +281,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12185320}
   m_CullTransparentMesh: 0
+--- !u!114 &12185324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12185320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f45d809b0b314396168cbe944575a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 0
+  healthText: {fileID: 0}
+  shakeDuration: 0.5
+  shakeAmount: 0.9
 --- !u!1001 &23222629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2416,6 +2433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771007472}
   - component: {fileID: 771007474}
+  - component: {fileID: 771007475}
   - component: {fileID: 771007473}
   m_Layer: 5
   m_Name: Mana
@@ -2565,6 +2583,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771007471}
   m_CullTransparentMesh: 0
+--- !u!114 &771007475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771007471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f598fadb9fea515438bf8512b7d3ff22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 2
+  mannaText: {fileID: 771007473}
 --- !u!1001 &781141645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2978,6 +3010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925244741}
   - component: {fileID: 925244743}
+  - component: {fileID: 925244744}
   - component: {fileID: 925244742}
   m_Layer: 5
   m_Name: Mana
@@ -3127,6 +3160,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925244740}
   m_CullTransparentMesh: 0
+--- !u!114 &925244744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925244740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f598fadb9fea515438bf8512b7d3ff22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 1
+  mannaText: {fileID: 925244742}
 --- !u!4 &925660445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3403170350744449240, guid: 9f6adb3f9c1c2eb479a000c03861fe11,
@@ -4101,6 +4148,7 @@ GameObject:
   - component: {fileID: 1165929960}
   - component: {fileID: 1165929962}
   - component: {fileID: 1165929961}
+  - component: {fileID: 1165929963}
   m_Layer: 5
   m_Name: PlayerTwo
   m_TagString: Untagged
@@ -4249,6 +4297,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165929959}
   m_CullTransparentMesh: 0
+--- !u!114 &1165929963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165929959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f45d809b0b314396168cbe944575a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 0
+  healthText: {fileID: 0}
+  shakeDuration: 0.5
+  shakeAmount: 0.9
 --- !u!1001 &1198461719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4941,6 +5005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1316970572}
   - component: {fileID: 1316970574}
+  - component: {fileID: 1316970575}
   - component: {fileID: 1316970573}
   m_Layer: 5
   m_Name: Health
@@ -5090,6 +5155,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316970571}
   m_CullTransparentMesh: 0
+--- !u!114 &1316970575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316970571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f45d809b0b314396168cbe944575a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 1
+  healthText: {fileID: 1316970573}
+  shakeDuration: 0.5
+  shakeAmount: 3.6
 --- !u!1 &1318640155
 GameObject:
   m_ObjectHideFlags: 0
@@ -6633,6 +6714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1639225686}
   - component: {fileID: 1639225688}
+  - component: {fileID: 1639225689}
   - component: {fileID: 1639225687}
   m_Layer: 5
   m_Name: Health
@@ -6782,6 +6864,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639225685}
   m_CullTransparentMesh: 0
+--- !u!114 &1639225689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639225685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f45d809b0b314396168cbe944575a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 2
+  healthText: {fileID: 1639225687}
+  shakeDuration: 0.5
+  shakeAmount: 3.6
 --- !u!4 &1645204719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3403170350744449240, guid: 9f6adb3f9c1c2eb479a000c03861fe11,

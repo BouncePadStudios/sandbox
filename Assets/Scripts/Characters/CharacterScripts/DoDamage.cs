@@ -16,14 +16,14 @@ public class DoDamage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.GetComponentInParent<StateManager>())
+        StateManager otherState = other.GetComponentInParent<StateManager>();
+        if (otherState)
         {
-            StateManager otherState = other.GetComponentInParent<StateManager>();
-
             if(otherState != states)
             {
                 if(!otherState.currentlyAttacking) // prevents dealing damage if you are already dealt damage
                     otherState.TakeDamage(10, damageType);
+                    
             }
         }
     }

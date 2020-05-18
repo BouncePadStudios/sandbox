@@ -17,10 +17,10 @@ public class EventSystemUI : MonoBehaviour
         onHealthChanged?.Invoke(id, health);
     }
 
-    public event Action<int, int> onManaChanged;
-    public void ChangeMana(int id, int amount)
+    public event Action<int, int> onMannaChanged;
+    public void ChangeManna(int id, int manna)
     {
-        onManaChanged?.Invoke(id, amount);
+        onMannaChanged?.Invoke(id, manna);
     }
 
     public event Action<int> onTimeChanged;

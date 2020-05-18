@@ -10,7 +10,6 @@ public class InputHandler : MonoBehaviour
     private string attackButton;
     //private string crouchButton;
     private string attack1Button;
-    private int controllerNum;  //not used presently
 
     private bool usingControllers = false;
 
@@ -31,7 +30,7 @@ public class InputHandler : MonoBehaviour
 
     public void SetupInput(string type, int id)
     {
-        controllerNum = id;
+        GetComponent<StateManager>().playerId = id;
 
         if (type == "C")
             usingControllers = true;
