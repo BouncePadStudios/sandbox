@@ -9,6 +9,7 @@ public class InputHandler : MonoBehaviour
     private string jumpButton;
     private string attackButton;
     //private string crouchButton;
+    private string attack1Button;
     private int controllerNum;  //not used presently
 
     private bool usingControllers = false;
@@ -39,6 +40,7 @@ public class InputHandler : MonoBehaviour
         verticalAxis = type + "Vertical" + id;
         jumpButton = type + "Jump" + id;
         attackButton = type + "Attack" + id;
+        attack1Button = type + "AttackOne" + id;
         //crouchButton = type + "Crouch" + id;
 
     }
@@ -48,9 +50,11 @@ public class InputHandler : MonoBehaviour
         horizontal = Input.GetAxis(horizontalAxis);
         vertical = Input.GetAxis(verticalAxis);
         attack0 = Input.GetButton(attackButton);
+        attack1 = Input.GetButton(attack1Button);
         
         states.horizontal = horizontal;
         states.vertical = vertical;
         states.attack0 = attack0;
+        states.attack1 = attack1;
     }
 }

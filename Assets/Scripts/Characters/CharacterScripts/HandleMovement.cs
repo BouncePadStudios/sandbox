@@ -137,7 +137,7 @@ public class HandleMovement : MonoBehaviour
             t += Time.deltaTime;
 
             //rb.velocity = direction;
-            rb.AddForce(direction * 5); // knockback
+            rb.AddForce(direction * 8); // knockback
             yield return null;
         }
     }
